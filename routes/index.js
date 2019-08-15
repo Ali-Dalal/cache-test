@@ -11,7 +11,10 @@ const sessionChecker = (req, res, next) => {
 };
 /* GET home page. */
 router.get('/', function (req, res, next) {
-    res.render('index', { title: 'Express' });
+    let colors = []
+    for (let i = 0; i < 10; i++)
+        colors.push('#' + (Math.random() * 0xFFFFFF << 0).toString(16));
+    res.render('index', { title: 'Express', colors: colors });
 });
 router.get('/login', sessionChecker, function (req, res, next) {
     res.render('login', { title: 'login' });

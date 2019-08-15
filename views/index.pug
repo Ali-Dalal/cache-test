@@ -7,3 +7,8 @@ block content
         h1 logged in as #{session.user.username}
         a(href='/logout') logout
     h1 Volcanic cache test
+
+    h2 if there is a session, the colors should be changed on every refresh
+    h2 if there is no session, the colors should be changed on every cache invalidate request
+    for color in colors
+        div(style=`height:200px; width:200px; background-color:${color}`)
