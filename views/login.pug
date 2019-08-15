@@ -1,0 +1,10 @@
+extends layout
+
+block content
+    h1 login here
+    form(action='/login', method='post')
+        label name:
+        input(type='text', name='name', placeholder='name')
+        label password:
+        input(type='password', name='password', placeholder='password')
+        button(type='submit') login
